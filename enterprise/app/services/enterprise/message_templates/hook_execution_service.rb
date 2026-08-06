@@ -83,7 +83,7 @@ module Enterprise::MessageTemplates::HookExecutionService
   end
 
   def captain_conversation_message?
-    message.captain_response_triggering? && inbox.captain_assistant.present?
+    message.captain_response_triggering? && inbox.captain_assistant.present? && !inbox.external_bot_active?
   end
 
   def perform_handoff
