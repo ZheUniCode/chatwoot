@@ -53,18 +53,18 @@ Your first goal is to remove Chatwoot branding and replace it with your own SaaS
 
 ## Phase 2: Adding Sorani (Central Kurdish) & RTL Support
 
-Since RTL is already supported, you just need to add the language files and trigger the RTL behavior for Sorani. The standard locale code for Central Kurdish is `ckb`.
+Since RTL is already supported, you just need to add the language files and trigger the RTL behavior for Sorani. The standard locale code we are using for Central Kurdish is `ku`.
 
 1. **Frontend Translation (Vue.js):**
-   - Copy the English translation file: `app/javascript/dashboard/i18n/locale/en/en.json` to a new folder: `app/javascript/dashboard/i18n/locale/ckb/ckb.json`.
+   - Copy the English translation file: `app/javascript/dashboard/i18n/locale/en/en.json` to a new folder: `app/javascript/dashboard/i18n/locale/ku/ku.json`.
    - Translate the JSON values from English to Sorani.
    - Register the locale in `app/javascript/dashboard/i18n/index.js` so it appears in the UI dropdowns.
 2. **Backend Translation (Rails / Emails):**
-   - Copy `config/locales/en.yml` to `config/locales/ckb.yml`.
+   - Copy `config/locales/en.yml` to `config/locales/ku.yml` and `devise.en.yml` to `devise.ku.yml`.
    - Translate the keys for system messages, email templates, and backend errors.
 3. **Enabling RTL for Sorani:**
-   - Chatwoot flips the layout automatically when the `<html dir="rtl">` tag is set. In the codebase (e.g., `app/javascript/dashboard/App.vue` or HTML layouts), ensure that when the active locale is `ckb`, the `dir` attribute is set to `rtl` just like it is for `ar` (Arabic).
-   - Add `ckb` to any RTL locale arrays in the Vue setup.
+   - **Frontend:** Chatwoot's frontend array natively supports `ku` in `rtlLanguageIds` (`languages.js`). The UI will automatically flip when `ku` is selected.
+   - **Backend Mailers:** Modify `app/views/layouts/mailer/base.liquid` to dynamically set `dir="rtl"` when the recipient's locale is `ku` or `ar`.
 
 ---
 
@@ -123,8 +123,8 @@ Your target market relies heavily on social media for business.
 
 If you want to start modifying the codebase immediately, we can begin by:
 
-1. Locating the exact RTL configuration files to add `ckb`.
-2. Scaffolding the `ckb.json` and `ckb.yml` files.
+1. Locating the exact RTL configuration files to add `ku`.
+2. Scaffolding the `ku.json` and `ku.yml` files.
 3. Setting up the white-label environment variables.
 
 Let me know which part you want to dive into first!
