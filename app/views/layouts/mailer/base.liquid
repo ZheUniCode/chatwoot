@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+{% if locale == 'ar' or locale == 'ku' %}{% assign dir = 'rtl' %}{% else %}{% assign dir = 'ltr' %}{% endif %}
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{{ dir }}" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -96,8 +97,8 @@
   {% endif %}
   {% assign brand_url = global_config['BRAND_URL'] %}
 
-  <body itemscope itemtype="http://schema.org/EmailMessage" style="font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,Helvetica,Arial,sans-serif; box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; line-height: 21px; background-color: #F4F7FB; margin: 0; padding: 0;" bgcolor="#F4F7FB">
-    <table class="body-wrap" role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width: 100%; background-color: #F4F7FB; margin: 0;" bgcolor="#F4F7FB">
+  <body itemscope itemtype="http://schema.org/EmailMessage" dir="{{ dir }}" style="font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,Helvetica,Arial,sans-serif; box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; line-height: 21px; background-color: #F4F7FB; margin: 0; padding: 0;" bgcolor="#F4F7FB">
+    <table class="body-wrap" role="presentation" dir="{{ dir }}" width="100%" cellpadding="0" cellspacing="0" style="width: 100%; background-color: #F4F7FB; margin: 0;" bgcolor="#F4F7FB">
       <tr style="margin: 0;">
         <td align="center" class="page-wrap" style="padding: 32px 16px 40px;" valign="top">
           <table class="email-container" role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 640px; margin: 0 auto;">
