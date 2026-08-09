@@ -28,6 +28,7 @@
 
 - [X] T002 [US1] Change `brand` hex code in `theme/colors.js` to the new custom brand color.
 - [X] T003 [US1] Create a brief `deploy-guide.md` documenting the requirement to set `INSTALLATION_NAME` in the `.env` file.
+- [X] T013 [P] [US1] Replace default logos (`public/logo.svg`, `public/logo-thumbnail.svg`, `public/favicon.ico`) with new brand assets, and update mailer header images.
 
 ---
 
@@ -44,6 +45,7 @@
 - [X] T007 [US2] Update `config/initializers/languages.rb` to append `ku` (Kurdish) to the `LANGUAGES_CONFIG` hash.
 - [X] T008 [US2] Register the `ku` locale imports and export it in `app/javascript/dashboard/i18n/index.js`.
 - [X] T009 [US2] Modify `app/views/layouts/mailer/base.liquid` to dynamically inject `dir="rtl"` into the HTML structure when the recipient's locale is `ku` or `ar`.
+- [X] T014 [US2] Update frontend RTL logic (e.g., `app/javascript/dashboard/components/widgets/conversation/advancedFilterItems/languages.js` or `constants.js`) to ensure the Vue app toggles to RTL when `ku` is selected.
 
 ---
 
@@ -64,6 +66,7 @@
 **Goal**: Finalize deployment configurations.
 
 - [X] T012 Update `deploy-guide.md` with Coolify deployment instructions (persistent Redis, Cloudflare R2 for `ACTIVE_STORAGE_SERVICE`, and SendGrid SMTP).
+- [X] T015 Draft `whatsapp-setup-guide.md` to provide customer-facing documentation for self-serve Meta WhatsApp Cloud API verification and token generation.
 
 ---
 
